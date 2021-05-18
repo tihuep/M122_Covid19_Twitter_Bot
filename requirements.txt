@@ -1,1 +1,2 @@
 requests
+TwitterAPI==2.7.3
