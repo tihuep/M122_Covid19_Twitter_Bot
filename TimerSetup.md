@@ -23,7 +23,7 @@ Requires=covid_19_twitter_bot.service
 
 [Timer]
 Unit=covid_19_twitter_bot.service
-OnCalendar=*-*-* *:*:00
+OnCalendar=*:*:0/10
 
 [Install]
 WantedBy=timers.target
