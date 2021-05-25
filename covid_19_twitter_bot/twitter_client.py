@@ -7,7 +7,7 @@ from covid_19_twitter_bot import twitter_message
 
 def get_received_messages(last_read=None):
     response = client.request('direct_messages/events/list')
-    messages = [twitter_message.from_event(event) for event in response.json()['events']]
+    messages = [twitter_message.Message.from_event(event) for event in response.json()['events']]
     if last_read:
         return _get_unread(messages, last_read)
     else:
@@ -20,7 +20,7 @@ def write_message(recipient, data):
         sender=None,
         recipient=recipient,
         data=data)
-    event = twitter_message.to_event(message)
+    event = message.to_event()
     client.request('direct_messages/events/new', json.dumps(event))
 
 
