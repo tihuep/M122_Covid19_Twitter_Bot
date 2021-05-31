@@ -4,6 +4,7 @@ import sys
 from configuration import Configuration
 
 
+# Load configuration from yaml file
 def load_configuration(configuration_file):
     configuration_path = Path(configuration_file).absolute()
     if not configuration_path.is_file():

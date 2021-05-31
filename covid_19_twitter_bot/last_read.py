@@ -1,6 +1,6 @@
 from pathlib import Path
 
-
+# A store for storing the ID of the last received message
 class LastReadStore:
     def __init__(self, store_location):
         self.store_location = Path(store_location)

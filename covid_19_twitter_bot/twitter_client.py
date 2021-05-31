@@ -6,6 +6,7 @@ from TwitterAPI import TwitterAPI
 import twitter_message
 
 
+# Simple Tiwtter client
 class TwitterClient:
     def __init__(self,
                  consumer_key,

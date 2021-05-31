@@ -5,6 +5,7 @@ request_pattern_regex = \
     r"^covid[ \t]+([A-Z]{2})(?:[ \t]+([0-9]{4}-(?:1[0-2]|0[1-9])-(?:3[01]|[12][0-9]|0[1-9])))?[ \t]*$"
 
 
+# Parse covid data request e.g. covid ZH 2020-07-04
 def parse(covid_data_request_string):
     result = re.search(request_pattern_regex, covid_data_request_string)
     if not result:
