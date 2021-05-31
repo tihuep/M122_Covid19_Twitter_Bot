@@ -1,5 +1,5 @@
 import re
-from covid_19_twitter_bot.covid_data_request import CovidDataRequest
+from covid_data_request import CovidDataRequest
 
 request_pattern_regex = \
     r"^covid[ \t]+([A-Z]{2})(?:[ \t]+((?:3[01]|[12][0-9]|0[1-9])-(?:1[0-2]|0[1-9])-[0-9]{4}))?[ \t]*$"
