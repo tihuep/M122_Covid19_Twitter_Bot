@@ -28,15 +28,15 @@ def run(configuration_file):
         access_token_key=configuration.twitter.access_token_key,
         access_token_secret=configuration.twitter.access_token_secret)
     covid = covid_client.CovidClient()
-    last_read_store = last_read.LastReadStore(Path(configuration.output_directory) / 'last_read')
+    last_read_store = last_read.LastReadStore((Path(configuration.output_directory) / 'last_read').absolute())
     last_read_id = last_read_store.get_last_read()
     log.info(f'Loaded last read id {last_read_id}')
     unread_messages = twitter.get_received_messages(last_read_id)
     if unread_messages:
         for message in unread_messages:
             _process_message(message, twitter, covid)
-            log.info(f'Set last read id: {message.id}')
-            last_read_store.set_last_read(message.id)
+        log.info(f'Set last read id: {unread_messages[0].id}')
+        last_read_store.set_last_read(unread_messages[0].id)
 
 
 def _process_message(message, twitter, covid):
