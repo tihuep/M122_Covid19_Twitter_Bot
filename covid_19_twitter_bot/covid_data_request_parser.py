@@ -2,7 +2,7 @@ import re
 from covid_data_request import CovidDataRequest
 
 request_pattern_regex = \
-    r"^covid[ \t]+([A-Z]{2})(?:[ \t]+((?:3[01]|[12][0-9]|0[1-9])-(?:1[0-2]|0[1-9])-[0-9]{4}))?[ \t]*$"
+    r"^covid[ \t]+([A-Z]{2})(?:[ \t]+([0-9]{4}-(?:1[0-2]|0[1-9])-(?:3[01]|[12][0-9]|0[1-9])))?[ \t]*$"
 
 
 def parse(covid_data_request_string):
