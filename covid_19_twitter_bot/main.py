@@ -50,4 +50,4 @@ def _process_message(message, twitter, covid):
 
 
 if __name__ == '__main__':
-    run('/home/vjauch/projects/tbz/M122_Covid19_Twitter_Bot/example-config.yaml')
+    run()
